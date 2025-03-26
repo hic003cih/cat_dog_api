@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>貓狗分類器</title>
+</head>
+
+<body>
+	<h1>🐾 上傳圖片預測貓還是狗</h1>
+	<form action="/predict" method="post" enctype="multipart/form-data">
+		<input type="file" name="file" accept="image/*" required>
+		<button type="submit">上傳並預測</button>
+	</form>
+
+	{% if label %}
+	<h2>結果：{{ label }}（信心度：{{ confidence }}）</h2>
+	<img src="{{ img_url }}" alt="上傳圖片" width="300">
+	{% endif %}
+</body>
+
+</html>
